@@ -1,0 +1,99 @@
+////////////////////////// CONEXION a MongoDB - NOSQL - API REST - Mongoose \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+------------------------ Procedimiento - Actividades ------------------------
+
+****** SECCION 1 ******
+
+
+1. Crear una carpeta llamada "SUPERARTEMIS".
+
+2. Crear una carperta dentro de "SUPERARTEMIS" llamada "Backend-Node-Mongo".
+
+3. Trabajo en el Terminal -- INSTALACION DE TODO LO NECESARIO PARA QUE LA APLICACION NOS FUNCIONE
+    3.1. Entrar a la  creada en la actividad 2. Escribimos "cd Backend-Node-Mongo".
+    3.2. Iniciamos el "package.json"
+        3.2.1. Escribimos "npm init -y"
+        3.2.2. Observamos el archivo "package.json" dentro de la carperta "Backend-Node-Mongo".
+    3.3. Instalar el "express", "dotenv", "mongoose", podemos instalarlas todas a la vez
+        3.3.1. Escribimos "npm i express dotenv mongoose" y se me instalan todas, hay que esperar a que se instalen todas.
+        3.3.2. Observamos la carpeta "node_modules" y el archivo "package-lock.json" dento de la  "Backend-Node-Mongo".
+        3.3.3. Dentro del archivo "package.json" vemos creado el grupo de "dependecies" donde esta el "dotenv", el "express" y el "mongoose", los cuales conforman el grupo de PRODUCCION.
+    3.4. Instalar el nodemon o el devDependencies, que son dependecias temporales
+        3.4.1. Escribimos "npm i -D nodemon"
+        3.4.2. Dentro del archivo "package.json" vemos creado el grupo de "devDependecies" donde esta el "nodemon" 
+    3.5. En esta aplicación trabajaremos con "module", asi que se la vamos a agregar. Trabajo en el archivo "package.json"
+        3.5.1. Debajo de "version", agregamos: "type" : "module", 
+
+
+4. Trabajaremos en solo archivo "index.js" no en los dos del trabajo anterior "app.js" e "index.js". Trabajo en el archivo "index.js"
+    4.1. Creamos un archivo llamado "index.js" dentro de la carpeta "Backend-Node-Mongo".
+    4.2. Puntos 1-3.
+
+
+5. Correr la aplicación para probar que funciona el puerto. Trabajo en el archivo "package.json"
+    5.1. Buscamos la llave "scripts" y vemos que tiene como value un objeto.
+    5.2. Borramos "test" y su contenido
+    5.3. Creamos un nuevo script, es el siguiente: "dev" : "nodemon index.js".
+    5.4. Trabajo en el Terminal
+        5.4.1. Corremos la aplicación escribiendo: "npm run dev"
+        5.4.2. Le damos enter y nos debe mostar el mensaje del console.log de la arrow function, debido a que ya pusimos a escuchar al express.
+    5.5. Lo provamos también el navegador, escribiendo "localhost:5000" y nos debe aparecer el texto "Cannot GET /"
+
+
+6. Trabajo en el archivo "index.js"
+    6.1. Punto 4 y 5
+
+
+7. Trabajo en el archivo ".env"
+    7.1. Creamos un archivo llamado ".env" dentro de la carperta "Backend-Node-Mongo".
+    7.2. Punto 1
+
+
+8. Trabajo en el archivo "index.js"
+    8.1. Punto 6 y 7.
+    8.2. Realizamos nuevamente el punto 5.5
+
+
+
+******** SECCION 2: TRABAJO PARA TRAER LA CONNECTION STRING ********
+
+1. Trabajo en el MongoDB Compass
+    1.1. Abrimos el MongoDB Compass
+    1.2. En la parte izquierda, seleccionamos "facturartemisV2".
+    1.3. En la parte central y poco a la derecha, debajo de la estrella de FAVORITE, vemos "Edit Connection String", le damos clic a la barrita de al lado. Y en el modal le damos "Confirm".
+    1.4. En mi caso, este es e link que puedo ver "mongodb+srv://artemis:12345@facturartemisv2cluster.ehqgozx.mongodb.net/"
+        1.4.1. artemis -> es el usuario
+        1.4.2. 12345 -> es la password
+        1.4.3. ehqgozx -> es el server
+    1.5. Este link esta incompleto, ya que falta la base de datos. Vamos a arreglarla!!!
+
+
+2. Trabajo en el archivo ".env". Especificar el nombre la variable de entorno "MONGO"
+    2.1. Punto 2.1 (Me llevo el link que copie y pegue en el punto 1.4)
+
+
+3. Trabajo en MongoDB Atlas, para traer la connection String
+    3.1. Entramos a MongoDB Atlas en el navegador e Iniciamos Sesion
+    3.2. Estando en "Projects" vemos que ya tenemos uno llamado "facturartemisV2" (para ver como lo cremos visita la carepta MONGO DB), entramos a ese proyecto. Nos carga la página "Database Deployments".
+    3.3. En la mitad de la página, le damos clic a "Browse Collections".
+    3.4. Seleccionamos la base de datos "superartemisDB".
+    3.5. Despues seleccionamos "categorias" y vemos que el titulo es "superartemisDB.categorias" donde "superartemisDB" es la base de datos y "categorias" es la collection.
+    3.6. Copio el nombre de la base de datos "superartemisDB"
+
+4. Trabajo en el archivo ".env"
+    4.1. Punto 2.2 (Pego la base de datos "superartemnisDB" al final del link)
+
+5. Modulo que gestiona la incorporacion de Mongoose.
+    5.1. Creamos la carpeta "config" dentro de la carpeta "Backend-Node-Mongo"
+    5.2. Dentro de la carpeta "config" creamos el archivo "config.js".
+    5.3. Trabajo en el archivo "config.js"
+        5.3.1. Puntos 1-3
+    5.4. Trabajo en el "index.js"
+        5.4.1. Puntos 8-9. 
+    5.5. Verificamos en el terminal del Visual Studio , si no esta corriendo la aplicacion, recorrerla con "npm run dev", debe aparecer el mensaje del console.log de "config.js" de la funcion conectarDB.
+    5.6. Verificamos que los datos del server y el puerto este correctos 
+        5.6. Vamos al "Atlas", en la parte izquierda le damos clic a "Database", despues le damos clic al subtitulo que esta en azul "facturartemisV2Cluster", y en la parte de "REGION" hay tres rectangulos, ponemos el mouse sobre el primero y nos muestra el server y el puerto, comparamos si son iguales al del Terminal del Visual Studio.
+
+
+INFORMACION IMPORTANTE
+Por favor seguir todas la indicaciones ya que en este repositorio no va incluida la carpeta "node_modules", debido a que tiene una amplia cantidad de carpetas y archivos, para que esta carpeta se instale automaticamente realizar correctamente la actividad 3.

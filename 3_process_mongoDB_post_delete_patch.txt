@@ -1,0 +1,81 @@
+//////////////////////////  MongoDB - Métodos Http: Post-Delete-Patch : findOne() Save() \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+------------------------ Procedimiento - Actividades ------------------------
+
+****** SECCION 1: METODO HTTP POST ******
+
+1. Trabajo en el archivo "categoria.controllers.js"
+    1.1. Puntos 4-5.
+
+
+2. Trabajo en el archivo "categorias.routes.js"
+    2.1. Puntos 6-7
+
+
+3. Trabajo en el postman -> comprobación de que funciona
+    3.1. Abrimos el postman
+    3.2. Abrimos una nueva ventana y la guardamos con el nombre "Post - Categorias" dentro de "superartemis MongoDB"
+    3.3. Al lado izquierdo del link, seleccionamos el método "POST".
+    3.4. Seleccionamos "Body", en el menu debajo del link.
+    3.5. Selecionamos "raw", en las opciones que aparecieron, y al final hay un select, seleccionamos "JSON"
+    3.6. Vamos a la ventana de "Get - Categorias", copiamos una de las categorias
+    3.7. Volvemos a la ventana "Post - Categorias" y pegamos la categorias que hemos copiado.
+    3.8. Borramos la variable "_id"  ya que esta se genera automaticamente.
+    3.9. Cambiamos los datos que estan en las demas variables
+    3.10. Escribo bien el link "localhost:5000/categoria/add"
+    3.11. Damos clic en "Send" y vemos que no funciona y se queda cargando la request o nos aparece un error.
+
+
+4. Trabajo en el archivo "index.js"
+    4.1. Punto 12
+
+
+5. Trabajo en el postman -> comprobación de que funciona
+    5.1. Volvemos al postman y damos clic en "Send"
+    5.2. Vemos en la parte de abajo que nos aparece la nueva categoria que hemos creado.
+    5.3. Vamos a la pestañan de "Get - Categorias" y damos clic en "Send"
+    5.4. Vemos que la ultima categoria, es la categoria que acabamos de crear y agregar.
+
+
+****** SECCION 2: METODO HTTP DELETE ******
+
+1. Trabajo en el archivo "categoria.controllers.js"
+    1.1. Puntos 6-7.
+
+2. Trabajo en el archivo "categorias.routes.js"
+    2.1. Puntos 8-9.
+
+3. Trabajo en el postman -> comprobación de que funciona
+    3.1. Abrimos el postman
+    3.2. Abrimos una nueva ventana y la guardamos con el nombre "Delete - Categorias" dentro de "superartemis MongoDB"
+    3.3. Al lado izquierdo del link, seleccionamos el método "DELETE".
+    3.4. Seleccionamos "Params", en el menu debajo del link.
+    3.5. Escribo bien el link "localhost:5000/categoria/del/"
+    3.6. Vamos a la ventana de "Get - Categorias", copiamos un _id de la categoria que queremos eliminar
+    3.7. Completamos el link pegando el "_i" despues del "del/", entonces me queda así: Ejemplo. "localhost:5000/categoria/del/64bfbce2c2247d79cba24d8c".
+    3.8. Damos clic en "Send", revisamos que nos debe aparecer un 1 debajo de "Pretty" y en la parte derecha "Status: 204 No Content"
+    3.9. Vamos a "Get - Categorias" y damos clic en "Send" se actualizan los datos y ya no aparece el que eliminamos.
+
+
+****** SECCION 3: METODO HTTP PATCH (ACTUALIZAR) ******
+
+1. Trabajo en el archivo "categoria.controllers.js"
+    1.1. Puntos 8-9.
+
+2. Trabajo en el archivo "categorias.routes.js"
+    2.1. Puntos 10-.
+
+3. Trabajo en el postman -> comprobación de que funciona
+    3.1. Abrimos el postman
+    3.2. Abrimos una nueva ventana y la guardamos con el nombre "Patch - Categorias" dentro de "superartemis MongoDB"
+    3.3. Al lado izquierdo del link, seleccionamos el método "PATCH".
+    3.4. Seleccionamos "Body", en el menu debajo del link.
+    3.5. Selecionamos "raw", en las opciones que aparecieron, y al final hay un select, seleccionamos "JSON"
+    3.10. Escribo bien el link "localhost:5000/categoria/upd/"
+    3.6. Vamos a la ventana de "Get - Categorias", copiamos el "_id" de una de las categorias
+    3.7. Volvemos al "Patch - Categorias" y completamos el link pegando el "_i" despues del "upd/", entonces me queda así: Ejemplo. "localhost:5000/categoria/upd/64a6cd44c5aec2a9c98eb5ac".
+    3.8. Vamos a la ventana de "Get - Categorias", copiamos toda categoria que vamos a actualizar
+    3.9. Borramos la variable "_id" ya que esta se genera automaticamente.
+    3.10. Actualizamos los datos.
+    3.11. Damos clic en "Send" y vemos que nos aparece el objeto actualizado en la parte de abajo, donde tambien le incluye el "_id" que pusimos en el link.
+    3.12. Vamos a "Get - Categorias", damos clic en "Send" y comprobamos la actualización de los datos.

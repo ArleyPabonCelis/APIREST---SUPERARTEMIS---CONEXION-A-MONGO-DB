@@ -1,0 +1,40 @@
+////////////////////////// CONEXION a MongoDB - Método Http - Get - Find() \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+------------------------ Procedimiento - Actividades ------------------------
+
+****** SECCION 1: MODULACION DE LAS CONEXIONES DE LAS BASES DE DATOS (CATEGORIAS) ******
+
+1. Creamos una carpeta "models" dentro de la carperta "Backend-Node-Mongo"
+
+2. Creamos un archivo "Categorias.js" dentro de la carpeta "models"
+
+3. Trabajo en el archivo "Categorias.js"
+    3.1. Punto 1-4
+
+4. Creamos una carpeta "controllers" dentro de la carperta "Backend-Node-Mongo"
+
+5. Creamos un archivo "categoria.controllers.js" dentro de la carpeta "models"
+
+
+****** SECCION 2: METODOS CRUD - METODO HTTP GET******
+
+1. Trabajo en el archivo "categoria.controllers.js"
+    1.1. Puntos 1-3
+
+2. Creamos una carpeta "routes" dentro de la carperta "Backend-Node-Mongo"
+
+3. Creamos un archivo "categorias.routes.js" dentro de la carpeta "routes"
+
+4. Trabajo en el archivo "categorias.routes.js"
+    4.1. Puntos 1-5
+
+5. Trabajo en el archivo "index.js"
+    5.1. Puntos 10-11
+ 
+6. Trabajo en el postman -> Verificación de que funciona
+    6.1. A lado del "Collections" le damos clicl al "+"
+    6.2. Donde dice "New Collection", le ponemos el nombre "superartemis Mongo"
+    6.3. Desplegamos el titulo en la parte izquierda y le damos clic en "Add a request" 
+    6.4. Le ponemos el nombre "Get - Categorias"
+    6.5. Verficicamos que este la opcion "GET" y ponemos el siguiente link "localhost:5000/categoria/all", le damos clic en "Send"
+    6.6. Vemos que aparecen los datos de la "categorias" que estan en el "Atlas" y el "MongoDB Compass".
