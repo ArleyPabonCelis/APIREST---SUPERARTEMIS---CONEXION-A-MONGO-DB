@@ -10,7 +10,7 @@
 2. Crear una carperta dentro de "SUPERARTEMIS" llamada "Backend-Node-Mongo".
 
 3. Trabajo en el Terminal -- INSTALACION DE TODO LO NECESARIO PARA QUE LA APLICACION NOS FUNCIONE
-    3.1. Entrar a la  creada en la actividad 2. Escribimos "cd Backend-Node-Mongo".
+    3.1. Entrar a la carpeta creada en la actividad 2. Escribimos "cd Backend-Node-Mongo".
     3.2. Iniciamos el "package.json"
         3.2.1. Escribimos "npm init -y"
         3.2.2. Observamos el archivo "package.json" dentro de la carperta "Backend-Node-Mongo".
